@@ -24,3 +24,10 @@ def read_reserve():
     with open(file_path, "r") as file:
         content = file.read()
     return HTMLResponse(content=content, status_code=200)
+
+@app.get("/para-el-amor-de-mi-vida")
+def read_root():
+    file_path = os.path.join(os.path.dirname(__file__), "tulipan.html")
+    with open(file_path, "r") as file:
+        content = file.read()
+    return HTMLResponse(content=content, status_code=200)
